@@ -3,12 +3,22 @@
     x:Class="MauiAppHotel.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiAppHotel"
-    Title="MauiAppHotel">
+    xmlns:views="clr-namespace:MauiAppHotel.Views">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Hospedagem">
+
+        <ShellContent
+            Title="Início"
+            ContentTemplate="{DataTemplate views:ContratacaoHospedagem}" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Sobre">
+
+        <ShellContent
+            Title="Sobre o App"
+            ContentTemplate="{DataTemplate views:SobrePage}" />
+
+    </FlyoutItem>
 
 </Shell>
