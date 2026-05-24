@@ -8,9 +8,18 @@
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10">
 
+        <Image Source="hotel.png"
+       HeightRequest="120"
+       WidthRequest="120"
+       HorizontalOptions="Center"
+       Aspect="AspectFit"/>
+
+
+
         <Label Text="Cálculo da Diária!" 
                FontFamily="Kalam"
                FontSize="50"
+               HorizontalOptions="Center"
                TextColor="{StaticResource Primary}"/>
 
         <Frame Padding="10">
@@ -51,7 +60,11 @@
                 <Label Text="Escolha Sua Suíte" />
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação" />
+               
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
+
+
 
                 <Frame Padding="10"
                        Margin="10">
@@ -61,31 +74,25 @@
                         <HorizontalStackLayout>
                             <Label Text="Check-in:" />
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
-                 
+
 
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
                             <Label Text="Check-out:" />
                             <DatePicker x:Name="dtpck_checkout"
-                Format="dd/MM/yyyy" />
-
-
+                                        Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
-                  
-                    
                 </Frame>
-
-                <Button Text="Avançar" />
-
-
+                <Button Text="Avançar" Clicked="Button_Clicked" />
             </VerticalStackLayout>
-                
-        </Frame>
-       
-        
+            
 
-    </VerticalStackLayout>
+        </Frame>
+                    
+            </VerticalStackLayout>
+               
 </ContentPage>
